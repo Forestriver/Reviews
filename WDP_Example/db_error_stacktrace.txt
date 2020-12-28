@@ -1,0 +1,22 @@
+(Press CTRL+C to quit)
+Traceback (most recent call last):
+  File "/home/forestriver/Programming/Reviews/env_reviews/lib/python3.7/site-packages/aiohttp_boilerplate/middleware/defaults.py", line 40, in erase_header_server
+    response = await handler(request)
+  File "/home/forestriver/Programming/Reviews/env_reviews/lib/python3.7/site-packages/aiohttp/web_urldispatcher.py", line 892, in _iter
+    resp = await method()
+  File "/home/forestriver/Programming/Reviews/env_reviews/lib/python3.7/site-packages/aiohttp_boilerplate/views/list.py", line 131, in get
+    return self.json_response(await self._get())
+  File "/home/forestriver/Programming/Reviews/env_reviews/lib/python3.7/site-packages/aiohttp_boilerplate/views/list.py", line 118, in _get
+    params=self.params,
+  File "/home/forestriver/Programming/Reviews/env_reviews/lib/python3.7/site-packages/aiohttp_boilerplate/views/list.py", line 88, in perform_get
+    fields=fields, many=True, **kwargs
+  File "/home/forestriver/Programming/Reviews/env_reviews/lib/python3.7/site-packages/aiohttp_boilerplate/sql/__init__.py", line 120, in select
+    stmt = await self.conn.prepare(self.query)
+  File "/home/forestriver/Programming/Reviews/env_reviews/lib/python3.7/site-packages/asyncpg/connection.py", line 402, in prepare
+    return await self._prepare(query, timeout=timeout, use_cache=False)
+  File "/home/forestriver/Programming/Reviews/env_reviews/lib/python3.7/site-packages/asyncpg/connection.py", line 407, in _prepare
+    use_cache=use_cache)
+  File "/home/forestriver/Programming/Reviews/env_reviews/lib/python3.7/site-packages/asyncpg/connection.py", line 328, in _get_statement
+    statement = await self._protocol.prepare(stmt_name, query, timeout)
+  File "asyncpg/protocol/protocol.pyx", line 163, in prepare
+asyncpg.exceptions.UndefinedTableError: relation "post_post" does not exist
