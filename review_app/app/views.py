@@ -13,7 +13,7 @@ class PostListView(ListView):
     def get_schema(self):
         return PostSchema
 
-# Endpoint to add or update data 
+# Endpoint to add or update data
 class UpdateView(ListView):
     async def post_review(self, request):
         data = await request.json()
@@ -22,7 +22,7 @@ class UpdateView(ListView):
         session.commit()
 
         return Response(status=201, body=self.resource.encode({
-            'notes': [
+            'post_post': [
                 {'id': note.id, 'name': note.name, 'content': note.content}
 
                     for note in session.query(Post)
