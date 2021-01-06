@@ -1,13 +1,18 @@
 from aiohttp_boilerplate.views.create import CreateView
 from aiohttp_boilerplate.views.list import ListView
-from aiohttp import web
+from aiohttp_boilerplate.views.list import RetrieveView
 
 from app import models
 from app import schemas
 
 # Endpont to retrieve data by id
-class PostListView(ListView):
+
+class PostListView(RetrieveView):
+    def get_model(self):
+        return models.Post
+
+    def get_schema(self):
+        return schemas.PostSchema
+
     def review(self):
-        result = models.Post()
-        result.get_by_id(id=3)
-        return self.id
+        result = self.get_model.get_by_id(id=2)
